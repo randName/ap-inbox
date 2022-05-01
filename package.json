@@ -13,7 +13,7 @@
     "ntl": "netlify"
   },
   "dependencies": {
-    "node-fetch": "^3.2.4"
+    "firebase": "^9.7.0"
   },
   "devDependencies": {
     "netlify-cli": "^10.1.0"

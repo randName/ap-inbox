@@ -1,5 +1,7 @@
 [template.environment]
   AP_PRIVATE_KEY = "private key for signing requests"
+  FIREBASE_PROJECT_ID = "Firebase Project ID"
+  FIREBASE_API_KEY = "API key for Firebase"
   ADMIN_USERNAME = "username for admin account (default: admin)"
 
 [functions]
