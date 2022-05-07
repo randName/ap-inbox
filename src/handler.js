@@ -1,17 +1,22 @@
-import { initializeApp } from 'firebase/app'
-import { getAuth, signInAnonymously } from 'firebase/auth'
-import { getFirestore, collection, addDoc } from 'firebase/firestore'
+import { initializeApp, cert } from 'firebase-admin/app'
+import { getFirestore } from 'firebase-admin/firestore'
 
-const projectId = process.env.FIREBASE_PROJECT_ID
+const project_id = process.env.FIREBASE_PROJECT_ID
+const client_email = process.env.FIREBASE_CLIENT_EMAIL
+const private_key = `-----BEGIN RSA PRIVATE KEY-----
+${process.env.AP_PRIVATE_KEY}
+-----END RSA PRIVATE KEY-----`
+
 const db = getFirestore(initializeApp({
-  projectId,
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: `${projectId}.firebaseapp.com`,
+  credential: cert({
+    project_id,
+    client_email,
+    private_key,
+  }),
 }))
 
 export const handlePayload = async (payload, sender) => {
-  await signInAnonymously(getAuth())
-  await addDoc(collection(db, 'inbox'), {
+  await db.collection('inbox').add({
     sender: sender.id,
     received: new Date(),
     payload,

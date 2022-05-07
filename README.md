@@ -8,6 +8,8 @@
 
 This implementation saves inbox activity to Firebase.
 
+You can use the Firebase Service Account private key as the signing key.
+
 Refer to instructions on the original [ActivityPub-inbox repo](https://github.com/musakui/ActivityPub-inbox) to deploy.
 
 ## Further reading
