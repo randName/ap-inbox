@@ -3,9 +3,9 @@ import { getFirestore } from 'firebase-admin/firestore'
 
 const project_id = process.env.FIREBASE_PROJECT_ID
 const client_email = process.env.FIREBASE_CLIENT_EMAIL
-const private_key = `-----BEGIN RSA PRIVATE KEY-----
-${process.env.AP_PRIVATE_KEY}
------END RSA PRIVATE KEY-----`
+const private_key = `-----BEGIN PRIVATE KEY-----
+${process.env.FIREBASE_PRIVATE_KEY}
+-----END PRIVATE KEY-----`
 
 const db = getFirestore(initializeApp({
   credential: cert({

@@ -1,6 +1,7 @@
 [template.environment]
-  AP_PRIVATE_KEY = "Firebase private key"
+  AP_PRIVATE_KEY = "private key for signing requests"
   FIREBASE_PROJECT_ID = "Firebase Project ID"
+  FIREBASE_PRIVATE_KEY = "Firebase private key"
   FIREBASE_CLIENT_EMAIL = "Firebase client email"
   ADMIN_USERNAME = "username for admin account (default: admin)"
 
